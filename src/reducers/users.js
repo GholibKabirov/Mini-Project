@@ -120,7 +120,7 @@ export const slice = createSlice({
       state.loading = false;
       state.users = action.payload;
     },
-    [getUsers.rejected]: setError,
+    [getUsers.rejected]: (state)=>{state.users=[] },
     [addUsers.pending]: setLoading,
     [addUsers.fulfilled]: (state, action) => {
       state.loading = false;
